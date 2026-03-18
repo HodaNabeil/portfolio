@@ -1,0 +1,25 @@
+import { TechItem } from "@/types";
+
+export const techStack: TechItem[] = [
+  { name: "React", icon: "React", category: "Frontend" },
+  { name: "Next.js", icon: "Nextjs", category: "Frontend" },
+  { name: "TypeScript", icon: "TypeScript", category: "Tools" },
+  { name: "JavaScript (ES6)", icon: "Javascript", category: "Frontend" },
+  { name: "CSS", icon: "Css", category: "Frontend" },
+  { name: "Tailwind CSS", icon: "Tailwindcss", category: "Frontend" },
+  { name: "Bootstrap", icon: "Bootstrap", category: "Frontend" },
+  { name: "Redux", icon: "Redux", category: "Frontend" },
+  { name: "Zustand", icon: "Zustand", category: "Frontend" },
+  { name: "Material UI", icon: "Mui", category: "Frontend" },
+  { name: "Figma", icon: "Figma", category: "Tools" },
+  { name: "Git", icon: "Git", category: "Tools" },
+  { name: "REST API", icon: "Restapi", category: "Backend" },
+  { name: "Google Cloud", icon: "Gcloud", category: "Tools" },
+  { name: "SEO", icon: "Seo", category: "Other" },
+  { name: "Webpack", icon: "Webpack", category: "Tools" },
+  { name: "Prisma", icon: "Prisma", category: "Database" },
+  { name: "Node.js", icon: "Nodejs", category: "Backend" },
+  { name: "Stripe", icon: "Stripe", category: "Tools" },
+  { name: "React Query", icon: "Reactquery", category: "Frontend" },
+  { name: "Postman", icon: "Postman", category: "Tools" },
+];
