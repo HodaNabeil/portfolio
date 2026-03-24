@@ -1,7 +1,4 @@
 export type ProjectCategory = 
-  | 'HTML & CSS' 
-  | 'HTML & CSS (Bootstrap)' 
-  | 'HTML & Tailwind' 
   | 'React' 
   | 'Next.js';
 
@@ -29,4 +26,19 @@ export interface Experience {
   company: string;
   period: string;
   description: string[];
+}
+
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export interface SocialLink {
+  platform: string;
+  url: string;
+}
+
+export interface TechStackItem {
+  name: string;
+  icon: string;
 }

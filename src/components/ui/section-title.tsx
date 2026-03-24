@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -26,7 +28,7 @@ export function SectionTitle({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400"
+        className="text-3xl md:text-4xl font-bold tracking-tight section-title"
       >
         {title}
       </motion.h2>
@@ -36,7 +38,7 @@ export function SectionTitle({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+          className="text-lg text-muted-foreground max-w-2xl mx-auto"
         >
           {subtitle}
         </motion.p>
@@ -47,7 +49,7 @@ export function SectionTitle({
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className={cn(
-          "h-1.5 w-20 bg-blue-600 dark:bg-blue-400 rounded-full",
+          "h-1.5 w-20 bg-primary rounded-full",
           align === "center" && "mx-auto",
           align === "right" && "ml-auto"
         )}

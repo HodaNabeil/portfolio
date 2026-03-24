@@ -4,10 +4,11 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X, Code2, Download, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { navItems } from "@/lib/data";
+import { navItems, bio } from "@/lib/data";
 import { ThemeToggle } from "./theme-toggle";
+import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -39,7 +40,7 @@ export function Navbar() {
                   "relative text-sm font-medium transition-colors hover:text-blue-600",
                   pathname === item.href
                     ? "text-blue-600"
-                    : "text-slate-600 dark:text-slate-400"
+                    : "text-slate-600 dark:text-slate-400",
                 )}
               >
                 {item.label}
@@ -57,13 +58,35 @@ export function Navbar() {
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <Link
-              href="/cv/resume.pdf"
-              target="_blank"
-              className="hidden md:inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2 text-sm font-medium text-white transition-all hover:bg-slate-800 hover:shadow-lg dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200"
-            >
-              Resume
-            </Link>
+            <div className="hidden md:flex gap-3">
+              <Button
+                size="sm"
+                className="bg-accent text-accent-foreground hover:bg-accent/90"
+                render={
+                  <a
+                    href={bio.cvUrl}
+                    download="HodaNabeil_CV.pdf"
+                    className="flex items-center gap-2"
+                  />
+                }
+              >
+                <Download className="w-4 h-4" /> Download PDF
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                render={
+                  <a
+                    href={bio.cvUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  />
+                }
+              >
+                <ExternalLink className="w-4 h-4" /> Open in Tab
+              </Button>
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -101,20 +124,41 @@ export function Navbar() {
                     "block rounded-md px-3 py-4 text-base font-medium transition-colors",
                     pathname === item.href
                       ? "bg-blue-50 text-blue-600 dark:bg-blue-900/20"
-                      : "text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-slate-50"
+                      : "text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-slate-50",
                   )}
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className="pt-4">
-                <Link
-                  href="/cv/resume.pdf"
-                  target="_blank"
-                  className="flex w-full items-center justify-center rounded-md bg-slate-900 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200"
+              <div className="pt-4 flex flex-col gap-3">
+                <Button
+                  className="w-full"
+                  size="lg"
+                  render={
+                    <a
+                      href={bio.cvUrl}
+                      download="HodaNabeil_CV.pdf"
+                      className="flex items-center justify-center gap-2"
+                    />
+                  }
                 >
-                  Download Resume
-                </Link>
+                  <Download className="w-4 h-4" /> Download PDF
+                </Button>
+                <Button
+                  className="w-full"
+                  variant="outline"
+                  size="lg"
+                  render={
+                    <a
+                      href={bio.cvUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2"
+                    />
+                  }
+                >
+                  <ExternalLink className="w-4 h-4" /> Open in Tab
+                </Button>
               </div>
             </div>
           </motion.div>

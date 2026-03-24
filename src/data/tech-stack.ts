@@ -22,4 +22,7 @@ export const techStack: TechItem[] = [
   { name: "Stripe", icon: "Stripe", category: "Tools" },
   { name: "React Query", icon: "Reactquery", category: "Frontend" },
   { name: "Postman", icon: "Postman", category: "Tools" },
+  { name: "Docker", icon: "Docker", category: "Tools" },
+  { name: "Shadcn UI", icon: "Shadcnui", category: "Frontend" },
+  { name: "GitHub", icon: "Github", category: "Tools" },
 ];

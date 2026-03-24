@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Portfolio | Senior Frontend Engineer",
+    default: "Portfolio | Frontend Engineer",
     template: "%s | Portfolio",
   },
   description:
     "Modern, high-performance portfolio website built with Next.js, TypeScript, and Tailwind CSS.",
   openGraph: {
-    title: "Portfolio | Senior Frontend Engineer",
+    title: "Portfolio | Frontend Engineer",
     description:
       "Modern, high-performance portfolio website built with Next.js, TypeScript, and Tailwind CSS.",
     url: "https://your-portfolio.com",
@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground transition-colors duration-300`}
       >
         <ThemeProvider
           attribute="class"
@@ -52,9 +55,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex flex-col min-h-screen">
-            {/* Navbar will be added here */}
-            <main className="flex-grow">{children}</main>
-            {/* Footer will be added here */}
+            <Navbar />
+            <main className="flex-grow pt-24">{children}</main>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
