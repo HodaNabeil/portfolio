@@ -54,7 +54,7 @@ export const projects: Project[] = [
     techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "React",
     image: "/img/maser.png",
-    liveLink: "https://github.com/HodaNabeil",
+    liveLink: "https://masterv.net/",
     githubLink: "https://github.com/HodaNabeil/Real-Estate-Platform",
     featured: true,
   },
