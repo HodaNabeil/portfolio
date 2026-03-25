@@ -10,13 +10,13 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 md:pt-24 md:pb-32 min-h-[90vh] flex items-center">
+    <section className="relative overflow-hidden pt-8 sm:pt-12 md:pt-16 lg:pt-24 pb-16 sm:pb-20 md:pb-24 lg:pb-32 min-h-[80vh] sm:min-h-[85vh] lg:min-h-[90vh] flex items-center">
       {/* Dynamic Background Blobs */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-primary/20 dark:bg-primary/10 rounded-full blur-[120px] -z-10 animate-pulse" />
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-accent/20 dark:bg-accent/10 rounded-full blur-[100px] -z-10 animate-pulse [animation-delay:2s]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-collection-blue-500/10 dark:bg-collection-blue-500/5 rounded-full blur-[150px] -z-10 rotate-45" />
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[300px] sm:w-[450px] md:w-[600px] h-[300px] sm:h-[450px] md:h-[600px] bg-primary/20 dark:bg-primary/10 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px] -z-10 animate-pulse" />
+      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[250px] sm:w-[375px] md:w-[500px] h-[250px] sm:h-[375px] md:h-[500px] bg-accent/20 dark:bg-accent/10 rounded-full blur-[60px] sm:blur-[80px] md:blur-[100px] -z-10 animate-pulse [animation-delay:2s]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] md:w-[800px] h-[200px] sm:h-[300px] md:h-[400px] bg-collection-blue-500/10 dark:bg-collection-blue-500/5 rounded-full blur-[100px] sm:blur-[125px] md:blur-[150px] -z-10 rotate-45" />
 
-      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -27,13 +27,13 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card text-primary font-bold uppercase tracking-wider text-xs"
+            className="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-card text-primary font-bold uppercase tracking-wider text-xs sm:text-sm"
           >
-            <Sparkles size={14} className="animate-pulse" />
-            <span>Open for new opportunities</span>
+            <Sparkles size={12} className="animate-pulse sm:size-14" />
+            <span className="whitespace-nowrap">Open for opportunities</span>
           </motion.div>
 
-          <h1 className="text-6xl lg:text-8xl font-extrabold tracking-tight leading-[1.05]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-[1.1] sm:leading-[1.05]">
             I build <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-collection-blue-500 to-accent bg-[length:200%_auto] animate-shine">
               Digital Experiences
@@ -42,44 +42,45 @@ export function Hero() {
             that matter.
           </h1>
 
-          <p className="text-xl text-muted-foreground max-w-lg leading-relaxed font-medium">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed font-medium">
             Frontend Engineer specializing in <span className="text-foreground font-bold">React & Next.js</span>. I transform complex ideas into elegant, high-performance web applications.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4">
             <Button
-              className="h-16 px-10 text-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl shadow-primary/30 active:scale-95 transition-all rounded-2xl group"
+              className="h-12 sm:h-14 md:h-16 px-6 sm:px-8 md:px-10 text-base sm:text-lg md:text-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl shadow-primary/30 active:scale-95 transition-all rounded-xl sm:rounded-2xl group"
               render={
-                <Link href="/projects" className="flex items-center">
-                  Explore Work <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
+                <Link href="/projects" className="flex items-center justify-center">
+                  <span className="mr-2">Explore Work</span> 
+                  <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                 </Link>
               }
             />
             <Button
               variant="outline"
-              className="h-16 px-10 text-xl border-2 glass-card hover:bg-muted active:scale-95 transition-all rounded-2xl"
+              className="h-12 sm:h-14 md:h-16 px-6 sm:px-8 md:px-10 text-base sm:text-lg md:text-xl border-2 glass-card hover:bg-muted active:scale-95 transition-all rounded-xl sm:rounded-2xl"
               render={
-                <a href={bio.cvUrl} download="HodaNabeil_CV.pdf" className="flex items-center">
-                  <Download className="mr-2" size={22} /> Resume
+                <a href={bio.cvUrl} download="HodaNabeil_CV.pdf" className="flex items-center justify-center">
+                  <Download className="mr-2" size={18} /> Resume
                 </a>
               }
             />
           </div>
 
-          <div className="flex items-center space-x-12 pt-10">
-            <div className="group cursor-default">
-              <p className="text-4xl font-black text-primary group-hover:scale-110 transition-transform tracking-tighter">2+</p>
-              <p className="text-muted-foreground font-bold text-xs uppercase tracking-widest">Years Exp.</p>
+          <div className="flex items-center justify-around sm:justify-start sm:space-x-8 md:space-x-12 pt-8 sm:pt-10">
+            <div className="group cursor-default text-center sm:text-left">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-black text-primary group-hover:scale-110 transition-transform tracking-tighter">2+</p>
+              <p className="text-muted-foreground font-bold text-xs sm:text-xs uppercase tracking-widest">Years Exp.</p>
             </div>
-            <div className="w-px h-12 bg-border/50" />
-            <div className="group cursor-default">
-              <p className="text-4xl font-black text-accent group-hover:scale-110 transition-transform tracking-tighter">50+</p>
-              <p className="text-muted-foreground font-bold text-xs uppercase tracking-widest">Projects</p>
+            <div className="w-px h-8 sm:h-10 md:h-12 bg-border/50 hidden sm:block" />
+            <div className="group cursor-default text-center sm:text-left">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-black text-accent group-hover:scale-110 transition-transform tracking-tighter">50+</p>
+              <p className="text-muted-foreground font-bold text-xs sm:text-xs uppercase tracking-widest">Projects</p>
             </div>
-            <div className="w-px h-12 bg-border/50" />
-            <div className="group cursor-default">
-              <p className="text-4xl font-black text-collection-blue-500 group-hover:scale-110 transition-transform tracking-tighter">100%</p>
-              <p className="text-muted-foreground font-bold text-xs uppercase tracking-widest">Dedication</p>
+            <div className="w-px h-8 sm:h-10 md:h-12 bg-border/50 hidden sm:block" />
+            <div className="group cursor-default text-center sm:text-left">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-black text-collection-blue-500 group-hover:scale-110 transition-transform tracking-tighter">100%</p>
+              <p className="text-muted-foreground font-bold text-xs sm:text-xs uppercase tracking-widest">Dedication</p>
             </div>
           </div>
         </motion.div>
@@ -90,7 +91,7 @@ export function Hero() {
           className="relative lg:ml-auto"
         >
           {/* Main Image Container */}
-          <div className="relative z-10 w-full max-w-[500px] aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] ring-1 ring-white/20 animate-float">
+          <div className="relative z-10 w-full max-w-[350px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px] aspect-[4/5] rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-[0_20px_40px_-12px_rgba(0,0,0,0.25)] sm:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] ring-1 ring-white/20 animate-float">
             <Image 
               src="/img/1771452192500.png"
               alt="Hoda Nabeil"
@@ -102,26 +103,26 @@ export function Hero() {
           </div>
           
           {/* Decorative Glows */}
-          <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/30 rounded-full blur-[80px] -z-0 animate-pulse" />
-          <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-accent/30 rounded-full blur-[80px] -z-0 animate-pulse [animation-delay:1.5s]" />
+          <div className="absolute -top-8 sm:-top-10 md:-top-12 -left-8 sm:-left-10 md:-left-12 w-40 sm:w-48 md:w-64 h-40 sm:h-48 md:h-64 bg-primary/30 rounded-full blur-[60px] sm:blur-[70px] md:blur-[80px] -z-0 animate-pulse" />
+          <div className="absolute -bottom-8 sm:-bottom-10 md:-bottom-12 -right-8 sm:-right-10 md:-right-12 w-40 sm:w-48 md:w-64 h-40 sm:h-48 md:h-64 bg-accent/30 rounded-full blur-[60px] sm:blur-[70px] md:blur-[80px] -z-0 animate-pulse [animation-delay:1.5s]" />
           
           {/* Floating Skill Badges */}
           <motion.div 
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/4 -right-8 p-5 glass-card rounded-[2rem] shadow-2xl border-white/40 hidden sm:flex items-center space-x-3 z-20"
+            className="absolute top-1/4 -right-6 sm:-right-8 p-3 sm:p-4 md:p-5 glass-card rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl border-white/40 hidden sm:flex items-center space-x-2 sm:space-x-3 z-20"
           >
-            <div className="w-10 h-10 rounded-full bg-collection-blue-500 flex items-center justify-center text-white text-xl">⚛️</div>
-            <span className="font-black text-sm tracking-tight">React Expert</span>
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-collection-blue-500 flex items-center justify-center text-white text-sm sm:text-base">⚛️</div>
+            <span className="font-black text-xs sm:text-sm tracking-tight">React Expert</span>
           </motion.div>
 
           <motion.div 
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute bottom-1/4 -left-12 p-5 glass-card rounded-[2rem] shadow-2xl border-white/40 hidden sm:flex items-center space-x-3 z-20"
+            className="absolute bottom-1/4 -left-8 sm:-left-10 md:-left-12 p-3 sm:p-4 md:p-5 glass-card rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl border-white/40 hidden sm:flex items-center space-x-2 sm:space-x-3 z-20"
           >
-            <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white text-xl">🚀</div>
-            <span className="font-black text-sm tracking-tight">Next.js Guru</span>
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-accent flex items-center justify-center text-white text-sm sm:text-base">🚀</div>
+            <span className="font-black text-xs sm:text-sm tracking-tight">Next.js Guru</span>
           </motion.div>
         </motion.div>
       </Container>

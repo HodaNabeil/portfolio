@@ -14,26 +14,26 @@ export function FeaturedProjects() {
   const featured = projects.filter(p => p.featured).slice(0, 3);
 
   return (
-    <section className="py-24 bg-slate-100/50 dark:bg-slate-900/10 overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 bg-slate-100/50 dark:bg-slate-900/10 overflow-hidden">
       <Container>
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 sm:mb-20 md:mb-24">
           <SectionTitle
             title="Featured Projects"
             subtitle="A curated selection of my recent works, showcasing innovative solutions and technical depth."
             align="left"
-            className="mb-0"
+            className="mb-6 lg:mb-0"
           />
           <Button 
-            className="hidden md:flex mt-8 glass-card border-none text-primary font-black uppercase tracking-widest shadow-2xl hover:scale-110 active:scale-95 transition-all text-sm h-14 px-10 rounded-2xl"
+            className="hidden lg:flex mt-6 lg:mt-8 glass-card border-none text-primary font-black uppercase tracking-widest shadow-2xl hover:scale-110 active:scale-95 transition-all text-sm h-12 sm:h-14 px-6 sm:px-8 lg:px-10 rounded-xl sm:rounded-2xl"
             render={
               <Link href="/projects" className="flex items-center">
-                All Projects <ArrowRight className="ml-2 h-5 w-5" />
+                All Projects <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
             }
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-20 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-16 sm:mb-20">
           {featured.map((project, i) => (
             <motion.div
               key={project.id}
@@ -99,12 +99,12 @@ export function FeaturedProjects() {
           ))}
         </div>
 
-        <div className="text-center md:hidden mt-12 pb-10">
+        <div className="text-center lg:hidden mt-8 sm:mt-12 pb-8 sm:pb-10">
           <Button 
-            className="w-full h-16 glass-card border-none text-primary font-black uppercase tracking-widest shadow-2xl rounded-2xl"
+            className="w-full h-12 sm:h-14 glass-card border-none text-primary font-black uppercase tracking-widest shadow-2xl rounded-xl sm:rounded-2xl text-sm"
             render={
               <Link href="/projects" className="flex items-center justify-center">
-                All Projects <ArrowRight className="ml-2 h-6 w-6" />
+                All Projects <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
             }
           />

@@ -18,7 +18,7 @@ export const Hero = () => {
         className="max-w-3xl"
       >
         <h1 className={cn('text-4xl', 'md:text-6xl', 'font-bold', 'tracking-tight', 'text-foreground', 'mb-6')}>
-          Hoda Nabeil<br className={cn('hidden', 'md:block')} />Frontend Engineer 
+          Hoda Nabeil<br />Frontend Engineer 
         </h1>
         <p className={cn('text-lg', 'md:text-xl', 'text-muted-foreground', 'mb-10', 'leading-relaxed')}>
           I build clean, minimal, and professional web experiences with a focus on 

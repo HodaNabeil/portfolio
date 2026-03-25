@@ -11,13 +11,13 @@ export const TechStackGrid = () => {
   const categories = ["Frontend", "Backend", "Tools", "Other"];
 
   return (
-    <div className={cn('grid', 'grid-cols-1', 'md:grid-cols-2', 'gap-16')}>
+    <div className={cn('grid', 'grid-cols-1', 'sm:grid-cols-2', 'gap-12', 'sm:gap-16')}>
       {categories.map((category) => (
-        <section key={category} className={cn('space-y-8')}>
-          <h2 className={cn('text-xs', 'font-bold', 'uppercase', 'tracking-widest', 'text-muted-foreground', 'border-b', 'pb-4')}>
+        <section key={category} className={cn('space-y-6', 'sm:space-y-8')}>
+          <h2 className={cn('text-xs', 'sm:text-sm', 'font-bold', 'uppercase', 'tracking-widest', 'text-muted-foreground', 'border-b', 'pb-3', 'sm:pb-4')}>
             {category}
           </h2>
-          <div className={cn('grid', 'grid-cols-2', 'sm:grid-cols-3', 'gap-6')}>
+          <div className={cn('grid', 'grid-cols-2', 'sm:grid-cols-3', 'md:grid-cols-4', 'gap-4', 'sm:gap-6')}>
             {techs
               .filter((t) => t.category === category)
               .map((tech, index) => (
@@ -27,9 +27,9 @@ export const TechStackGrid = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className={cn('flex', 'items-center', 'gap-3', 'p-4', 'rounded-xl', 'border', 'border-muted', 'bg-card', 'hover:border-accent/40', 'transition-colors', 'group')}
+                  className={cn('flex', 'items-center', 'gap-2', 'sm:gap-3', 'p-3', 'sm:p-4', 'rounded-lg', 'sm:rounded-xl', 'border', 'border-muted', 'bg-card', 'hover:border-accent/40', 'transition-colors', 'group')}
                 >
-                  <span className={cn('font-semibold', 'text-sm', 'group-hover:text-accent', 'transition-colors')}>
+                  <span className={cn('font-semibold', 'text-xs', 'sm:text-sm', 'group-hover:text-accent', 'transition-colors')}>
                     {tech.name}
                   </span>
                 </motion.div>

@@ -10,9 +10,9 @@ export const ProjectList = () => {
   const { activeCategory, setActiveCategory, filteredProjects, categories } = useProjectFilters();
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-8 sm:space-y-12">
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-2">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
         {categories.map((cat) => (
           <Button
             key={cat}
@@ -20,7 +20,7 @@ export const ProjectList = () => {
             size="sm"
             onClick={() => setActiveCategory(cat)}
             className={cn(
-              "rounded-full px-6 transition-all",
+              "rounded-full px-4 sm:px-6 text-xs sm:text-sm transition-all",
               activeCategory === cat ? "bg-primary text-primary-foreground" : "text-muted-foreground"
             )}
           >
@@ -32,7 +32,7 @@ export const ProjectList = () => {
       {/* Projects Grid */}
       <motion.div 
         layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
       >
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
@@ -52,8 +52,8 @@ export const ProjectList = () => {
 
       {/* Empty State */}
       {filteredProjects.length === 0 && (
-        <div className="text-center py-20 bg-muted/20 rounded-lg">
-          <p className="text-muted-foreground">No projects found in this category.</p>
+        <div className="text-center py-16 sm:py-20 bg-muted/20 rounded-lg">
+          <p className="text-muted-foreground text-sm sm:text-base">No projects found in this category.</p>
         </div>
       )}
     </div>
